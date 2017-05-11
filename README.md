@@ -19,11 +19,11 @@ An assignment from Sofi for assessment purposes.
 2. Click on the Test menu option
 3. Navigate to the Windows option
 4. Select Test Explorer
-  * The tests should show up in this window
+   * The tests should show up in this window
 5. Right-click on a test or multiple and click Run Selected Tests
 
 # Running the tests with 'dotnet test'
 1. Open a command line (preferrably with Administrator)
 2. Change directory to the SofiAssigment.Tests folder
 3. Execute the following command:
-  * dotnet test SofiAssignment.Tests.csproj
+   * dotnet test SofiAssignment.Tests.csproj
