@@ -4,6 +4,8 @@ dist: trusty
 mono: none
 dotnet: 1.0.4
 before_script:
-  - chmod a+x ./build.sh
+  - dotnet restore SofiAssignment.sln
 script:  
-  - ./build.sh
+  - dotnet build SofiAssignment.sln
+after_success:
+  - dotnet test SofiAssignment.Tests/SofiAssignment.Tests.csproj
