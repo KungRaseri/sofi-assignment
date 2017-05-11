@@ -1,3 +1,3 @@
-dotnet restore **/*.csproj -f net46
-dotnet build **/*.csproj -f net46
-dotnet test **/*.csproj -f net46
+dotnet restore SofiAssignment.sln
+dotnet build SofiAssignment.sln -f net46
+dotnet test SofiAssignment.sln -f net46
