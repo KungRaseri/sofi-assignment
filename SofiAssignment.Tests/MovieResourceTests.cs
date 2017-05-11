@@ -6,6 +6,10 @@ using Xunit;
 
 namespace SofiAssignment.Tests
 {
+    /// <summary>
+    /// Test Suite: This suite tests the Movies Endpoint
+    /// 
+    /// </summary>
     public class MovieResourceTests : TestBase
     {
         // Arranging the Mock Data into a collection
@@ -27,7 +31,7 @@ namespace SofiAssignment.Tests
         /// </summary>
         /// <param name="expectedMovieDetails">The expected details of the movie</param>
         [Theory, MemberData(nameof(ExpectedMovieData))]
-        public async Task GetDetails_ReturnsValidMovieInformation(Movie expectedMovieDetails)
+        public async Task Get_Movie_Details_ValidateInformation(Movie expectedMovieDetails)
         {
             // Get the movie information by movie id.
             var movie = await Client.GetAsync($"movie/{expectedMovieDetails.Id}?api_key={Settings.ApiKey}");
@@ -49,6 +53,20 @@ namespace SofiAssignment.Tests
 
             // Assert that the Genres are equal to the expected genres
             Assert.Equal(expectedMovieDetails.Genres, inTest.Genres);
+
+            // We can test more of the properties on the Movie object. Or run operations on the lists, etc.
+        }
+
+        [Fact]
+        public async Task Get_Movie_TopRated()
+        {
+            var movie = await Client.GetAsync($"movie/top_rated?api_key={Settings.ApiKey}");
+            var result = await movie.Content.ReadAsStringAsync();
+            var inTest = JsonConvert.DeserializeObject<MoviePageResult>(result);
+
+            Assert.IsType<MoviePageResult>(inTest);
+            Assert.NotEmpty(inTest.Results);
+            Assert.Equal(20, inTest.Results.Length);
         }
     }
 }
