@@ -13,6 +13,8 @@ An assignment from Sofi for assessment purposes.
 5. Click on the Clone dropdown link under the Local Git Repositories section
 6. Copy the https github url into the text field
 7. Click clone
+8. Open the solution:
+   * SofiAssignment.sln
 
 # Running the tests in Visual Studio
 1. Build the solution
