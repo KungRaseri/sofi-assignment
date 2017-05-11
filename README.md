@@ -20,6 +20,7 @@ An assignment from Sofi for assessment purposes.
 3. Navigate to the Windows option
 4. Select Test Explorer
   * The tests should show up in this window
+5. Right-click on a test or multiple and click Run Selected Tests
 
 # Running the tests with 'dotnet test'
 1. Open a command line (preferrably with Administrator)
