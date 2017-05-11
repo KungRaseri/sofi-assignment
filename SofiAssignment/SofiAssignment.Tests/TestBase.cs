@@ -12,13 +12,18 @@ namespace SofiAssignment.Tests
     /// </summary>
     public class TestBase : IClassFixture<TestBase>
     {
+        /// <summary>
+        /// Client that we use to send requests to the API
+        /// </summary>
         protected HttpClient Client { get; set; }
+        /// <summary>
+        /// Settings to initalize the client
+        /// </summary>
         protected ApiSettings Settings { get; set; }
 
         public TestBase()
         {
-            var file = File.ReadAllText("appsettings.json");
-            Settings = JsonConvert.DeserializeObject<ApiSettings>(file);
+            Settings = JsonConvert.DeserializeObject<ApiSettings>(File.ReadAllText("appsettings.json"));
             Client = new HttpClient { BaseAddress = new Uri(Settings.ApiUrl) };
         }
     }

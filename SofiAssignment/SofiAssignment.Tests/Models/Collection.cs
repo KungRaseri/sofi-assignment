@@ -1,4 +1,4 @@
-namespace SofiAssignment.Tests
+namespace SofiAssignment.Tests.Models
 {
     public class Collection
     {
